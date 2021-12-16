@@ -1,0 +1,35 @@
+
+<%= simple_form_for(@player) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.association :round %>
+    <%= f.input :name %>
+    <%= f.input :hole_1 %>
+    <%= f.input :hole_2 %>
+    <%= f.input :hole_3 %>
+    <%= f.input :hole_4 %>
+    <%= f.input :hole_5 %>
+    <%= f.input :hole_6 %>
+    <%= f.input :hole_7 %>
+    <%= f.input :hole_8 %>
+    <%= f.input :hole_9 %>
+    <%= f.input :out %>
+    <%= f.input :hole_10 %>
+    <%= f.input :hole_11 %>
+    <%= f.input :hole_12 %>
+    <%= f.input :hole_13 %>
+    <%= f.input :hole_14 %>
+    <%= f.input :hole_15 %>
+    <%= f.input :hole_16 %>
+    <%= f.input :hole_17 %>
+    <%= f.input :hole_18 %>
+    <%= f.input :in %>
+    <%= f.input :total %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,76 @@
+class RoundsController < ApplicationController
+  before_action :set_round, only: %i[ show edit update destroy ]
+  skip_before_action :verify_authenticity_token
+
+
+  # GET /rounds or /rounds.json
+  def index
+    @rounds = Round.all
+    render json: @rounds, include:
+    [:course, :players] 
+   end
+
+  # GET /rounds/1 or /rounds/1.json
+  def show
+    render json: @round, include:
+    [:course, :players, :tees]
+  end
+
+  # GET /rounds/new
+  def new
+    @round = Round.new
+  end
+
+  # GET /rounds/1/edit
+  def edit
+  end
+
+  # POST /rounds or /rounds.json
+  def create
+    @round = Round.new(round_params)
+    puts round_params
+
+    respond_to do |format|
+      if @round.save
+        format.html { redirect_to @round, notice: "Round was successfully created." }
+        format.json { render :show, status: :created, location: @round }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @round.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PATCH/PUT /rounds/1 or /rounds/1.json
+  def update
+    respond_to do |format|
+      if @round.update(round_params)
+        format.html { redirect_to @round, notice: "Round was successfully updated." }
+        format.json { render :show, status: :ok, location: @round }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @round.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /rounds/1 or /rounds/1.json
+  def destroy
+    @round.destroy
+    respond_to do |format|
+      format.html { redirect_to rounds_url, notice: "Round was successfully destroyed." }
+      format.json { head :no_content }
+    end
+  end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_round
+      @round = Round.find(params[:id])
+    end
+
+    # Only allow a list of trusted parameters through.
+    def round_params
+      params.require(:round).permit(:course_id, :num_players, :user_id)
+    end
+end

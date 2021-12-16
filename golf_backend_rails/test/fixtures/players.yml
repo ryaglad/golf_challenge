@@ -1,0 +1,51 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  round: one
+  name: MyString
+  hole_1: 1
+  hole_2: 1
+  hole_3: 1
+  hole_4: 1
+  hole_5: 1
+  hole_6: 1
+  hole_7: 1
+  hole_8: 1
+  hole_9: 1
+  out: 1
+  hole_10: 1
+  hole_11: 1
+  hole_12: 1
+  hole_13: 1
+  hole_14: 1
+  hole_15: 1
+  hole_16: 1
+  hole_17: 1
+  hole_18: 1
+  in: 1
+  total: 1
+
+two:
+  round: two
+  name: MyString
+  hole_1: 1
+  hole_2: 1
+  hole_3: 1
+  hole_4: 1
+  hole_5: 1
+  hole_6: 1
+  hole_7: 1
+  hole_8: 1
+  hole_9: 1
+  out: 1
+  hole_10: 1
+  hole_11: 1
+  hole_12: 1
+  hole_13: 1
+  hole_14: 1
+  hole_15: 1
+  hole_16: 1
+  hole_17: 1
+  hole_18: 1
+  in: 1
+  total: 1

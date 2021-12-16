@@ -1,0 +1,115 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @round.course.name %>
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Hole 1</th>
+      <th>Hole 2</th>
+      <th>Hole 3</th>
+      <th>Hole 4</th>
+      <th>Hole 5</th>
+      <th>Hole 6</th>
+      <th>Hole 7</th>
+      <th>Hole 8</th>
+      <th>Hole 9</th>
+      <th>Out</th>
+      <th>Hole 10</th>
+      <th>Hole 11</th>
+      <th>Hole 12</th>
+      <th>Hole 13</th>
+      <th>Hole 14</th>
+      <th>Hole 15</th>
+      <th>Hole 16</th>
+      <th>Hole 17</th>
+      <th>Hole 18</th>
+      <th>In</th>
+      <th>Tot</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @round.course.tees.each do |tee| %>
+      <tr>
+        <td><%= tee.name %></td>
+        <td><%= tee.hole_1 %></td>
+        <td><%= tee.hole_2 %></td>
+        <td><%= tee.hole_3 %></td>
+        <td><%= tee.hole_4 %></td>
+        <td><%= tee.hole_5 %></td>
+        <td><%= tee.hole_6 %></td>
+        <td><%= tee.hole_7 %></td>
+        <td><%= tee.hole_8 %></td>
+        <td><%= tee.hole_9 %></td>
+        <td><%= tee.out %></td>
+        <td><%= tee.hole_10 %></td>
+        <td><%= tee.hole_11 %></td>
+        <td><%= tee.hole_12 %></td>
+        <td><%= tee.hole_13 %></td>
+        <td><%= tee.hole_14 %></td>
+        <td><%= tee.hole_15 %></td>
+        <td><%= tee.hole_16 %></td>
+        <td><%= tee.hole_17 %></td>
+        <td><%= tee.hole_18 %></td>
+        <td><%= tee.in %></td>
+        <td><%= tee.tot %></td>
+        <td><%= link_to 'Show', tee %></td>
+        <td><%= link_to 'Edit', edit_tee_path(tee) %></td>
+        <td><%= link_to 'Destroy', tee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+     
+    <% end %>
+    <% @round.players.each do |player| %>
+      <tr>
+        <td><%= player.name %></td>
+        <td><%= player.hole_1 %></td>
+        <td><%= player.hole_2 %></td>
+        <td><%= player.hole_3 %></td>
+        <td><%= player.hole_4 %></td>
+        <td><%= player.hole_5 %></td>
+        <td><%= player.hole_6 %></td>
+        <td><%= player.hole_7 %></td>
+        <td><%= player.hole_8 %></td>
+        <td><%= player.hole_9 %></td>
+        <td><%= player.out %></td>
+        <td><%= player.hole_10 %></td>
+        <td><%= player.hole_11 %></td>
+        <td><%= player.hole_12 %></td>
+        <td><%= player.hole_13 %></td>
+        <td><%= player.hole_14 %></td>
+        <td><%= player.hole_15 %></td>
+        <td><%= player.hole_16 %></td>
+        <td><%= player.hole_17 %></td>
+        <td><%= player.hole_18 %></td>
+        <td><%= player.in %></td>
+        <td><%= player.total %></td>
+        <td><%= link_to 'Show', player %></td>
+        <td><%= link_to 'Edit', edit_player_path(player) %></td>
+        <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  </tbody>
+</table>
+
+
+
+
+
+
+
+<table>
+
+
+  <tbody>
+
+</table>
+
+<%= link_to 'Edit', edit_round_path(@round) %> |
+<%= link_to 'Back', rounds_path %>
