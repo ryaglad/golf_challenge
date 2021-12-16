@@ -1,10 +1,12 @@
 # golf_challenge
 
-Rails App: 
+Rails App:
 - npm install
 - rails db:migrate
 - rails db:seed
 - rails s --port 3000
+
+tables - Courses, Tees, Rounds, Players
 
 
 React App:
